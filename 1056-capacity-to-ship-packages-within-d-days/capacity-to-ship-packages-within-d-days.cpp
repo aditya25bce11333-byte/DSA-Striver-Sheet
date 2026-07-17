@@ -5,10 +5,14 @@ private:
         int days = 1;
         int currentload = 0;
         for (int w : weights){
+            // if the weight on ship > capacity.
             if ( currentload + w > capacity){
+                // wait for the next day.
                 days++;
+                // start the current load from w , the very next day.
                 currentload = w;
             } else {
+                // if currentload doesnt exceedeed the capacity of the ship , add that weight w to currentload.
                 currentload += w;
              }
         }
